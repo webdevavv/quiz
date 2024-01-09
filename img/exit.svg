@@ -1,0 +1,9 @@
+<svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="mdi:account-child">
+<rect x="0.5" width="32" height="32" rx="10" fill="#FFF2F2"/>
+<g id="Login">
+<path id="Exclude" d="M22 6H17C14.7909 6 13 7.79086 13 10V12V20V22C13 24.2091 14.7909 26 17 26H22C24.2091 26 26 24.2091 26 22V10C26 7.79086 24.2091 6 22 6Z" fill="#FFBFBF"/>
+<path id="Vector" d="M18 19L20.2929 16.7071C20.6834 16.3166 20.6834 15.6834 20.2929 15.2929L18 13M20 16L8 16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+</g>
+</svg>

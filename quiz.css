@@ -1,0 +1,527 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #FFF8F8;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.tabbar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 24px 24px 0px 0px;
+    border: 1px solid #F1F1F1;
+    background: #FFF;
+    box-shadow: 2px 0px 20px 0px rgba(24, 57, 107, 0.05);
+    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.tabbar ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tabbar ul li a {
+    max-height: 44px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.tabbar ul li a span {
+    
+    padding: 3px;
+    padding-bottom: 1px;
+}
+
+.tabbar ul li a span svg{
+    width: 24px;
+    height: 24px;
+}
+
+.tabbar ul li a .name {
+    color: #523030;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.tabbar ul .active a span:nth-child(1){
+    border-radius: 10px;
+    background: rgba(255, 191, 191, 0.45);
+}
+
+p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+input {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+/* header */
+
+header {
+    padding: 0 16px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.quiz-title {
+    color: #000;
+    text-align: center;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 13px;
+}
+
+.progress-wrap {
+    width: 100%;
+    height: 3px;
+    position: relative;
+
+    border-radius: 100px;
+    background: #FFDADA;
+    overflow: hidden;
+}
+
+.progress-bar {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    border-radius: 100px;
+    background: #FF7B7B;
+    position: absolute;
+    z-index: 1;
+
+    &.half {
+        width: 10%;
+    }
+
+    &.full {
+        width: 100%;
+    }
+}
+
+/* main */
+
+.main {
+    margin: 16px;
+    border-radius: 36px;
+    background: #FFF;
+    padding: 25px;
+    height: 74vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question-counter {
+    display: flex;
+    justify-content: center;
+
+    color: #858494;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
+}
+
+.question-name {
+    max-width: 260px;
+
+    margin-top: 3px;
+    margin-bottom: 15px;
+    color: #858494;
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.4px;
+}
+
+.quesiton-body {
+    width: 100%;
+    flex: 1;
+    overflow-x: auto;
+}
+
+.quesiton-body .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.quesiton-body .form label {
+    border-radius: 24px;
+    background: #FFDFDF;
+    padding: 20px;
+    width: 100%;
+}
+
+.check-block {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    border-radius: 16px;
+    background: #FFF;
+    padding: 12px 25px;
+}
+
+.check-block .item {
+    padding: 6px 12px;
+    color: #434343;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    border: 2px solid transparent;
+}
+
+.check-block .item.active {
+    background: #FFDFDF;
+    border-radius: 24px;
+    border-color: #FF7B7B;
+}
+
+.check-block-grid {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    grid-gap: 35px;
+    width: 100%;
+    border-radius: 16px;
+    background: #FFF;
+    padding: 12px 25px;
+}
+
+.check-block-grid .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.check-block-grid .item.active div{
+    border-color: #FF7B7B;
+}
+.check-block-grid .item.active span{
+    color: #FF7B7B;
+    font-weight: 600;
+}
+
+.check-block-grid .item div {
+    border: 2px solid transparent;
+    border-radius: 14px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+}
+
+.check-block-grid .item div img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.check-block-grid .item span {
+    color: #434343;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.4px;
+}
+
+.custom-checkbox>textarea {
+    resize: none;
+    border-radius: 16px;
+    background: #FFF;
+    width: 100%;
+    height: 200px;
+    padding: 12px 25px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+}
+
+.custom-checkbox>textarea::placeholder {
+    color: #A5A5A5;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+}
+
+.custom-checkbox>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox>span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox>span::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #FFA7A7;
+    background: #FFA7A7;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+    border-color: #FC8D8D;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox>input:not(:disabled):active+span::before {
+    background-color: #FC8D8D;
+    border-color: #FC8D8D;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox>input:checked+span::before {
+    border-color: #FC8D8D;
+    background: #FFA7A7;
+    background-image: url("img/checked.svg");
+}
+
+.quesiton-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.quesiton-btn a {
+    border-radius: 24px;
+    background: #FF7B7B;
+    padding: 15px 40px;
+
+    color: #FFF;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.question-body-photo {
+    border-radius: 30px;
+    border: 1px solid #FFDFDF;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.question-body-photo img {
+    display: flex;
+    object-fit: cover;
+}
+
+li {
+    list-style-type: none;
+}
+
+#tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#tabs li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    padding: 13px 19px;
+}
+
+#tabs li {
+    border: 1px solid transparent;
+}
+
+#tabs .active {
+    border-radius: 25px;
+    border: 1px solid #FF7B7B;
+    background: #FFDFDF;
+}
+
+#tabs li a .color {
+    border-radius: 16px;
+    width: 60px;
+    height: 60px;
+}
+
+#tabs li a .text {
+    color: #434343;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    max-width: 170px;
+}
+
+.input-block {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.input-block .input {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.input-block .input input {
+    width: 78%;
+}
+
+.input-block .labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-block .labels label {
+    color: #858494;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
+}
+
+.input-block .labels label:nth-child(2) {
+    margin-left: 30px;
+}
+
+
+/* The slider itself */
+.input {
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    transition: all .25s ease;
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    width: 100%;
+    /* Full-width */
+    height: 7px;
+    /* Specified height */
+    background: #FFF0F0;
+    /* Grey background */
+    outline: none;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    border-radius: 100px;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 27px;
+    /* Set a specific slider handle width */
+    height: 27px;
+    /* Slider handle height */
+    background: #FFA1A1;
+    border: 3px solid #fff;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+    border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+    width: 27px;
+    /* Set a specific slider handle width */
+    height: 27px;
+    /* Slider handle height */
+    background: #FFA1A1;
+    border: 3px solid #fff;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+    border-radius: 50%;
+}
